@@ -5,7 +5,7 @@ import Square from './Square';
 const Grid = styled.div`
 width: 400px;
 height: 400px;
-margin: 0px;
+margin: 0 auto;
 border: 4px solid darkblue;
 border-radius: 10px;
 display: grid;
