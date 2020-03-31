@@ -11,7 +11,7 @@ const Board = ({ squares, onclick }) => (
     <Square value="6" onClick={() => onclick("dummy value")} />
     <Square value="7" onClick={() => onclick("dummy value")} />
     <Square value="8" onClick={() => onclick("dummy value")} />
-    <Square value="9" onClick={() => onc`lick("dummy value")} />
+    <Square value="9" onClick={() => onclick("dummy value")} />
   </div>
 )
 
