@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import Board from './Board';
+import styled from 'styled-components';
 import { calculateWinner } from '../helpers';
+
+const BoardText = styled.div`
+  width: 200px;
+  margin: 20px auto;
+`;
 
 const Game = () => {
 
@@ -8,8 +14,12 @@ const Game = () => {
   const [xIsNext, setXIsNext] = useState(true);
   const winner = calculateWinner(board);
 
-  const handleClick = () => {
-
+  const handleClick = (i) => {
+    const boardCopy = [...board];
+    if (winner || boardCopy[i]) return;
+    boardCopy[i] = xIsNext ? 'X' : 'O';
+    setBoard(boardCopy);
+    setXIsNext(!xIsNext);
   }
 
   const jumpTo = () => {
@@ -21,7 +31,12 @@ const Game = () => {
   }
 
   return (
-    <Board squares={board} onClick={handleClick} />
+    <>
+      <Board squares={board} onClick={handleClick} />
+      <BoardText>
+        <p>{}</p>
+      </BoardText>
+    </>
   )
 }
 
