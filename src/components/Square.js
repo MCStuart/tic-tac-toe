@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Button = styled.button`
+  background: lightblue;
+`;
 
 const Square = ({ value, onClick }) => (
-    <button onClick={onClick}>
+    <Button onClick={onClick}>
         {value}
-    </button>
+    </Button>
 );
 
 export default Square;
